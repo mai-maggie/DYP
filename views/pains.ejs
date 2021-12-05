@@ -1,0 +1,37 @@
+<%- include("partials/header") %>
+<body>
+  <ul class="list-group list-group-flush">
+    <% if(pains){pains.forEach(pain => { %>
+    <li class="list-group-item"><%=pain%></li>
+    <%})};%>
+  </ul>
+  <h2 style="border: 2em">Dump Your Pain</h2>
+  <form method="post">
+    <input
+      type="text"
+      id="form-text"
+      class="form-control"
+      aria-describedby="text"
+      name="message"
+    />
+    <div id="form-text" class="form-text">
+      Your message shouldn't contain any real names,address or any private
+      information.
+    </div>
+    <button
+      class="btn btn-lg btn-secondary fw-bold border-white bg-white"
+      type="submit"
+      method="POST"
+    >
+      Dump!
+    </button>
+    <a
+      class="btn btn-lg btn-secondary fw-bold border-white bg-white"
+      href="/logout"
+    >
+      logout</a
+    >
+  </form>
+</body>
+
+<%- include("partials/footer") %>
